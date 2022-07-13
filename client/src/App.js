@@ -17,6 +17,7 @@ import {
   
   import RegisterPage from './components/views/RegisterPage/RegisterPage'
   
+  import Auth from './hoc/auth'
   
   
   
@@ -31,12 +32,12 @@ import {
   
   
   <Routes>
-  <Route exact path="/" element = {<LandingPage/>}/>
+  <Route exact path="/" component = {Auth(LandingPage, null)}/>
 
   
-  <Route exact path="/login" element = {<LoginPage/>}/>
+  <Route exact path="/login" component = {Auth(LoginPage, false)}/>
   
-  <Route exact path="/register" element = {<RegisterPage/>}/>
+  <Route exact path="/register" component = {Auth(RegisterPage, false)}/>
   
   </Routes>
   
